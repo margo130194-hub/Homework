@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     private let buttons = ["AC","7","4", "1","{}", "%","8","5","2","0","<-","3","6","9",".","-","+", "=", "*", "/"]
     private let verticalStackView1 = UIStackView()
     private let verticalStackView2 = UIStackView()
@@ -19,8 +20,6 @@ class ViewController: UIViewController {
     private var operation: String = ""
     private var result: Double = 0
     private var isTyping: Bool = false
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -188,17 +187,17 @@ class ViewController: UIViewController {
             } else {
                 label.text? += buttonTitle
             }
+        } else {
+            if buttonTitle == "."{
+                label.text = "0."
             } else {
-                if buttonTitle == "."{
-                    label.text = "0."
-                } else {
-                    label.text = buttonTitle
-                }
-                isTyping = true
+                label.text = buttonTitle
             }
+            isTyping = true
         }
-        
     }
+    
+}
 
 
 //#Preview {
