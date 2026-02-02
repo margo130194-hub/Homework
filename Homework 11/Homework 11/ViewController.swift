@@ -52,25 +52,30 @@ class ViewController: UIViewController {
         }
         
         [realButtons[0],realButtons[5],realButtons[9], realButtons[14]].forEach{
-            $0.widthAnchor.constraint(equalTo: $0.heightAnchor).isActive = true
+            $0.widthAnchor.constraint(equalToConstant: 80).isActive = true
+            $0.heightAnchor.constraint(equalToConstant: 80).isActive = true
             $0.layer.cornerRadius = 40
+        
             horizontalStackView1.addArrangedSubview($0)
         }
         
         [realButtons[1],realButtons[6],realButtons[12], realButtons[17]] .forEach{
-            $0.widthAnchor.constraint(equalTo: $0.heightAnchor).isActive = true
+            $0.widthAnchor.constraint(equalToConstant: 80).isActive = true
+            $0.heightAnchor.constraint(equalToConstant: 80).isActive = true
             $0.layer.cornerRadius = 40
             horizontalStackView2.addArrangedSubview($0)
         }
         
         [realButtons[2],realButtons[7],realButtons[11], realButtons[15]].forEach{
-            $0.widthAnchor.constraint(equalTo: $0.heightAnchor).isActive = true
+            $0.widthAnchor.constraint(equalToConstant: 80).isActive = true
+            $0.heightAnchor.constraint(equalToConstant: 80).isActive = true
             $0.layer.cornerRadius = 40
             horizontalStackView3.addArrangedSubview($0)
         }
         
         [realButtons[3], realButtons[8], realButtons[10], realButtons[16]].forEach{
-            $0.widthAnchor.constraint(equalTo: $0.heightAnchor).isActive = true
+            $0.widthAnchor.constraint(equalToConstant: 80).isActive = true
+            $0.heightAnchor.constraint(equalToConstant: 80).isActive = true
             $0.layer.cornerRadius = 40
             horizontalStackView4.addArrangedSubview($0)
         }
@@ -85,14 +90,17 @@ class ViewController: UIViewController {
             horizontalStackView5.addArrangedSubview($0)
         }
         
-        realButtons[4].widthAnchor.constraint(equalTo: realButtons[13].widthAnchor, multiplier: 2, constant: 10).isActive = true
+        realButtons[4].widthAnchor.constraint(equalTo: realButtons[13].widthAnchor, multiplier: 2, constant: 15).isActive = true
         [realButtons[18], realButtons[13]].forEach{
-            $0.widthAnchor.constraint(equalTo:$0.heightAnchor).isActive = true
+            $0.widthAnchor.constraint(equalToConstant: 80).isActive = true
+            $0.heightAnchor.constraint(equalToConstant: 80).isActive = true
             $0.layer.cornerRadius = 40
         }
+        realButtons[18].widthAnchor.constraint(equalTo: realButtons[13].widthAnchor).isActive = true
+        realButtons[18].heightAnchor.constraint(equalTo: realButtons[13].heightAnchor).isActive = true
         
-        horizontalStackView5.distribution = .fill
-        horizontalStackView5.spacing = 7
+        horizontalStackView5.distribution = .equalSpacing
+        horizontalStackView5.spacing = 15
         
         [realButtons[14], realButtons[17], realButtons[15], realButtons[16], realButtons[18]].forEach{
             $0.backgroundColor = UIColor(named: "my orange")
@@ -100,18 +108,18 @@ class ViewController: UIViewController {
         
         [horizontalStackView1, horizontalStackView2, horizontalStackView3, horizontalStackView4].forEach { stackView in
             stackView.axis = .horizontal
-            stackView.spacing = 10
-            stackView.alignment = .fill
-            stackView.distribution = .fillEqually
+            stackView.spacing = 15
+            stackView.alignment = .center
+            stackView.distribution = .equalSpacing
             stackView.translatesAutoresizingMaskIntoConstraints = false
             verticalStackView.addArrangedSubview(stackView)
         }
         verticalStackView.addArrangedSubview(horizontalStackView5)
         
         verticalStackView.axis = .vertical
-        verticalStackView.spacing = 10
-        verticalStackView.alignment = .fill
-        verticalStackView.distribution = .fill
+        verticalStackView.spacing = 7
+        verticalStackView.alignment = .center
+        verticalStackView.distribution = .equalSpacing
         verticalStackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(verticalStackView)
         
