@@ -136,8 +136,8 @@ class ViewController: UIViewController {
     
     private func setupConctraints(){
         NSLayoutConstraint.activate([
-            verticalStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            verticalStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            verticalStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            verticalStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             verticalStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             
             label.bottomAnchor.constraint(equalTo: verticalStackView.topAnchor),
