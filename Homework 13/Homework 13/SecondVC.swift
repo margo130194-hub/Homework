@@ -46,7 +46,8 @@ class SecondVC: UIViewController {
         view.addSubview(label)
         
         [nameField, phoneField].forEach{
-            $0.textColor = .black
+            $0.textColor = .white
+            $0.backgroundColor = .systemBlue
             $0.borderStyle = .roundedRect
             $0.widthAnchor.constraint(equalToConstant: 220).isActive = true
             $0.translatesAutoresizingMaskIntoConstraints = false

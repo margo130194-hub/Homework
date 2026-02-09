@@ -38,7 +38,7 @@ class TripController: UIViewController {
     }
     
     private func setupViewProperties(){
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .white
     }
     
     private  func setupSubview(){
@@ -46,6 +46,7 @@ class TripController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .white
         tableView.register(TripCell.self, forCellReuseIdentifier: TripCell.reuseIdentifier)
         
         view.addSubview(tableView)
