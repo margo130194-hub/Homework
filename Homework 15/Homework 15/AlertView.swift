@@ -51,7 +51,7 @@ class AlertViewController: UIViewController {
         header.textColor = .black
         header.font = UIFont(name: "ChalkboardSE-Bold", size: 20)
         header.translatesAutoresizingMaskIntoConstraints = false
-    
+        
         label.text = " Dee Dee, Marky, and Joey just raided your fridge and messed up the screen! Everything is blurred until you chase them away."
         label.font = UIFont(name: "ChalkboardSE", size: 20)
         label.textColor = .black
@@ -111,7 +111,7 @@ class AlertViewController: UIViewController {
             stackView.trailingAnchor.constraint(equalTo: someView.trailingAnchor, constant: -30),
             stackView.bottomAnchor.constraint(equalTo: someView.bottomAnchor, constant: -30)
             
-            ])
+        ])
     }
     private func shakeView(_ viewToShake: UIView){
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
