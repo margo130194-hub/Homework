@@ -77,7 +77,7 @@ private extension ViewController{
         }
         UIView.animate(withDuration: 0.3, animations: {
             self.circle.alpha = 0
-        }) { _ in
+        }) { _ in 
             self.circle.center = point
             UIView.animate(withDuration: 0.3) {
                 self.circle.alpha = 1

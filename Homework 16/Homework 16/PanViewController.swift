@@ -57,7 +57,7 @@ private extension PanViewController{
         } else {
             UIView.animate(withDuration: 0.5, animations: {
                 self.circle.alpha = 0
-            }) { _ in
+            }) { _ in 
                 let radius = self.circle.frame.width / 2
                 let diameter = self.circle.frame.width
                 var newCenter: CGPoint
