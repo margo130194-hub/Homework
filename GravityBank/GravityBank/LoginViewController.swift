@@ -82,6 +82,8 @@ final class LoginViewController: UIViewController {
             $0.borderStyle = .roundedRect
             $0.clearButtonMode = .whileEditing
             $0.delegate = self
+            $0.textColor = .black
+            $0.backgroundColor = .white
             $0.widthAnchor.constraint(equalToConstant: 260).isActive = true
             $0.translatesAutoresizingMaskIntoConstraints = false
             
@@ -125,6 +127,7 @@ final class LoginViewController: UIViewController {
         buttonStackView.distribution = .fill
         buttonStackView.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(buttonStackView)
+        logIn.addTarget(self, action: #selector(logInTapped), for: .touchUpInside)
     }
     
     private func setupConstraints() {
@@ -181,6 +184,24 @@ final class LoginViewController: UIViewController {
         let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double ?? 0.3
         UIView.animate(withDuration: duration){
             self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc private func logInTapped(){
+        if number.text == "555",
+           password.text == "000"{
+            UserDefaults.standard.set(true, forKey: "isLoggedIn")
+            guard let window = view.window else { return }
+            window.rootViewController = TabBarViewController()
+        } else {
+            let alert = UIAlertController(
+                title: "ERROR",
+                message: "Please try again",
+                preferredStyle: .alert)
+            let closeAction = UIAlertAction(title: "OK", style: .destructive)
+            
+            alert.addAction(closeAction)
+            self.present(alert, animated: true)
         }
     }
     

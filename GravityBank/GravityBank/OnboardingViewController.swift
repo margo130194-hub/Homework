@@ -68,7 +68,7 @@ import UIKit
         startButton.layer.shadowOffset = CGSize(width: 0, height: 2)
         startButton.layer.shadowOpacity = 0.8
         startButton.layer.shadowRadius = 3
-        startButton.addTarget(self, action: #selector(skipTapped), for: .touchUpInside)
+        startButton.addTarget(self, action: #selector(startTapped), for: .touchUpInside)
        
         view.addSubview(startButton)
         view.addSubview(image)
@@ -110,10 +110,17 @@ import UIKit
         descriptionLabel.text = data.description
     }
      
-     @objc private func skipTapped(){
-         let mainVC = LoginViewController()
-         mainVC.modalPresentationStyle = .fullScreen
-         present(mainVC, animated: true)
+     @objc private func startTapped(){
+         UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
+         let loginVC = LoginViewController()
+         guard let window = view.window else { return }
+            view.window?.rootViewController = loginVC
+            view.window?.makeKeyAndVisible()
+         
+         UIView.transition(with: window,
+                           duration: 0.3,
+                           options: .transitionCrossDissolve,
+                           animations: nil)
      }
 }
 

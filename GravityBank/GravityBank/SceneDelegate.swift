@@ -17,10 +17,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
         
-        let vc = ViewController()
-        let navVC = UINavigationController(rootViewController: vc)
-        
+        let hasSeenOnbording = UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
+        if hasSeenOnbording{
+            window?.rootViewController = LoginViewController()
+        } else {
+            window?.rootViewController = ViewController()
+        }
+        //window?.rootViewController = ViewController()
         window?.makeKeyAndVisible()
-        window?.rootViewController = navVC
     }
 }
