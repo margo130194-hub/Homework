@@ -1,5 +1,38 @@
-# Xcode
+# macOS
 .DS_Store
-DerivedData/
+
+# Xcode user data
 xcuserdata/
 *.xcuserstate
+
+# Build files
+build/
+DerivedData/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# CocoaPods
+Pods/
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+
+# Firebase
+GoogleService-Info.plist
+
+# Archives
+*.xcarchive
+
+# Logs
+*.log
+
+# Temporary files
+*.swp
+*.tmp
